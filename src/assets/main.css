@@ -1,5 +1,8 @@
 @import './base.css';
-
+* {
+  line-height: 1.25em;
+  letter-spacing: 0!important;
+}
 #app {
 
   margin: 0 auto;
