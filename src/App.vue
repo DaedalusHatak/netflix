@@ -7,7 +7,7 @@ import EnjoyTV from './components/EnjoyTV.vue'
 const movies = ref<any>()
 
 async function getMovies() {
-  await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_APP_API_KEY}`)
+  await fetch(import.meta.env.VITE_APP_SERVER_NAME)
     .then((resp) => {
       return resp.json()
     })
@@ -29,7 +29,7 @@ getMovies()
   <section>
       <EnjoyTV class="content-section"></EnjoyTV>
   </section>
-  <div v-if="movies">{{ movies.results[0].original_title }}</div>
+  <div v-if="movies">{{ movies.API_KEY }}</div>
 </main>
  
 
