@@ -126,9 +126,7 @@ body {
     url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Blk.woff)
       format('woff');
 }
-*{
-  font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
-}
+
 h1 {
   font-size: 3rem;
   font-weight: 900;

@@ -2,12 +2,12 @@
 import { computed, ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import HeroNetflix from './components/HeroNetflix.vue'
-import EnjoyTV from './components/icons/EnjoyTV.vue'
-const API_KEY = 'c54e012f26022e6ad00735cc83d37781'
+import EnjoyTV from './components/EnjoyTV.vue'
+
 const movies = ref<any>()
 
 async function getMovies() {
-  await fetch('https://api.themoviedb.org/3/movie/popular?api_key=c54e012f26022e6ad00735cc83d37781')
+  await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${import.meta.env.VITE_APP_API_KEY}`)
     .then((resp) => {
       return resp.json()
     })
