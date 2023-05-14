@@ -104,12 +104,30 @@ const emailData = ref<string>('')
 }
 .info{
   color:gold;
-  position: absolute;
+
 inset: 0;
-top:70px;
 margin: auto;
 text-align: center;
  h1{
+  font-size:2.5rem;
+  font-family:fantasy;
+  letter-spacing: 0.2ch;
+  text-decoration:underline;
+  font-weight: 600;
+ }
+ h3{
+  font-size: 2rem;
+  padding-top: 1rem;
+  font-weight: 600;
+ }
+}
+@media (min-width: 720px) {
+
+  .info{
+    position: absolute;
+    inset: 0;
+    top: 70px;
+    h1{
   font-size:2.8rem;
   font-family:fantasy;
   letter-spacing: 0.2ch;
@@ -120,6 +138,8 @@ text-align: center;
   font-size: 2rem;
   font-weight: 600;
  }
+  }
+  
 }
 nav {
   display: flex;
@@ -154,6 +174,7 @@ nav {
 }
 .flex-hero {
   display: flex;
+  flex-direction: column;
   padding: 9.875rem 0 4rem;
   min-height: 43.75rem;
 }

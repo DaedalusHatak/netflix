@@ -7,14 +7,27 @@ import EnjoyTV from './components/EnjoyTV.vue'
 const movies = ref<any>()
 
 async function getMovies() {
-  await fetch(import.meta.env.VITE_APP_SERVER_NAME)
+  let key:any;
+await fetch(`${import.meta.env.VITE_APP_SERVER_NAME}/get-token`, ).then(res => {
+  return res.json();
+}).then(resp=>{ 
+  key = resp.access_token;
+}).then(() => {
+
+  fetch(`${import.meta.env.VITE_APP_SERVER_NAME}/hello`, {
+  headers: {'content-type': 'application/json', authorization: `Bearer ${key}`}
+})
     .then((resp) => {
       return resp.json()
     })
     .then((response) => {
       movies.value = response
     })
-}
+  
+
+
+})}
+
 getMovies()
 </script>
 
@@ -29,7 +42,7 @@ getMovies()
   <section>
       <EnjoyTV class="content-section"></EnjoyTV>
   </section>
-  <div class="movies"  v-for="movie in movies.movies.results" :key="movie">{{ movie.original_title}}</div>
+  <div v-if="movies"><div class="movies"  v-for="movie in movies.movies.results" :key="movie">{{ movie.original_title}}</div></div>
 </main>
  
 
