@@ -29,7 +29,7 @@ getMovies()
   <section>
       <EnjoyTV class="content-section"></EnjoyTV>
   </section>
-  <div v-if="movies">{{ movies.API_KEY }}</div>
+  <div class="movies"  v-for="movie in movies.movies.results" :key="movie">{{ movie.original_title}}</div>
 </main>
  
 
@@ -37,6 +37,9 @@ getMovies()
 </template>
 
 <style scoped lang="scss">
+.movies{
+  padding:2rem;
+}
 main{
   overflow: hidden;
 }

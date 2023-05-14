@@ -34,8 +34,14 @@ const emailData = ref<string>('')
         <button class="sign-in-button">Sign In</button>
       </nav>
       <div class="flex-hero">
+        <div class="info">  <h1>THIS IS NOT NETFLIX PAGE</h1>
+          <h1>IT IS ONLY PORTFOLIO PURPOSE</h1>
+          <h3>DON'T USE YOUR ACTUAL NETFLIX DATA</h3>
+        </div>
         <div class="header-hero">
+       
           <h1>Unlimited movies, TV shows, and more</h1>
+      
           <p class="subtitle-hero">Watch anywhere. Cancel anytime.</p>
           <div class="get-started">
             <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
@@ -80,7 +86,7 @@ const emailData = ref<string>('')
       </div>
     </div>
 </template>
-<style scoped>
+<style scoped lang="scss">
 @media screen and (min-width: 600px) {
   nav {
     max-width: calc(100% - 4rem);
@@ -95,6 +101,25 @@ const emailData = ref<string>('')
   nav {
     max-width: calc(66.66666666666666% - 6rem);
   }
+}
+.info{
+  color:gold;
+  position: absolute;
+inset: 0;
+top:70px;
+margin: auto;
+text-align: center;
+ h1{
+  font-size:2.8rem;
+  font-family:fantasy;
+  letter-spacing: 0.2ch;
+  text-decoration:underline;
+  font-weight: 600;
+ }
+ h3{
+  font-size: 2rem;
+  font-weight: 600;
+ }
 }
 nav {
   display: flex;
