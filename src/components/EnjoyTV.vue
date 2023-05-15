@@ -2,7 +2,7 @@
 <div class="tv">
     <div class="screen text"><h2>Enjoy on your TV</h2>
 <p>Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.</p></div>
-<div class="screen"><img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt=""> <div class="video-screen"><video data-uia="nmhp-card-animation-asset-video" autoplay="true" playsinline="true" muted="true" loop="true"><source src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-tv-0819.m4v" type="video/mp4"></video></div>
+<div class="screen"><img src="@/assets/tv.png" alt=""> <div class="video-screen"><video data-uia="nmhp-card-animation-asset-video" autoplay="true" playsinline="true" muted="true" loop="true"><source src="@/assets/video.mp4" type="video/mp4"></video></div>
 </div>
    </div>
 </template>
