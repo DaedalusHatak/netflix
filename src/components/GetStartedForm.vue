@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-const props = defineProps({
+defineProps({
     isMax: String,
 });
 const isActive = ref<boolean>()
@@ -129,12 +129,12 @@ input {
   justify-content: center;
   writing-mode: horizontal-tb !important;
   width: max-content;
-  max-width: 196px;
-  flex: 1 0 auto;
+  
+  flex: 0 0 auto;
   border: 0px;
   margin-left: 0.5rem;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
   min-height: 3.5rem;
   padding: 0.75rem 1.5rem;
   background: rgb(229, 9, 20);

@@ -56,7 +56,7 @@ You can also download your favorite shows with the iOS, Android, or Windows 10 a
   <div class="ask-section">
     <h2>Frequently Asked Questions</h2>
     <ul>
-      <li v-for="question in arrOfQuestions">
+      <li v-for="question in arrOfQuestions" :key="question.name">
         <h3>
           <button @click="question.isActive = !question.isActive">
             {{ question.name }}
@@ -90,7 +90,7 @@ You can also download your favorite shows with the iOS, Android, or Windows 10 a
         </div>
       </li>
     </ul>
-    <get-started-form :is-max="'80%'"></get-started-form>
+    <get-started-form class="spacing"></get-started-form>
   </div>
 </template>
 
@@ -107,6 +107,9 @@ h3 {
 svg {
   width: 36px;
   height: 36px;
+}
+.spacing{
+  margin-top: 2.85rem;
 }
 .ask-section {
   padding: 6rem 0;

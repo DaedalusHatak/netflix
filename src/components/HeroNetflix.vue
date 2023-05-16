@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import GetStartedForm from './GetStartedForm.vue';
-
-const isActive = ref<boolean>()
-const emailData = ref<string>('')
 </script>
 
 <template>
@@ -30,7 +26,7 @@ const emailData = ref<string>('')
           <h1>Unlimited movies, TV shows, and more</h1>
       
           <p class="subtitle-hero">Watch anywhere. Cancel anytime.</p>
-         <get-started-form></get-started-form>
+         <GetStartedForm/>
         </div>
       </div>
     </div>

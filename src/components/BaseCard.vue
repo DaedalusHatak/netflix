@@ -1,0 +1,57 @@
+<script setup lang="ts">
+const props = defineProps({
+header: String,
+desc: String,
+reverse:Boolean
+});
+</script>
+
+<template>
+  <div class="tv" :style="reverse ? ' flex-direction: row-reverse' : ''">
+    <div class="screen text">
+      <h2>{{header}}</h2>
+      <p>{{desc}}</p>
+    </div>
+    <div class="screen">
+      <slot></slot>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.tv {
+  height: 100%;
+  min-height: auto;
+  margin: auto;
+  flex-wrap: nowrap;
+  padding: 4.5rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+h2 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+p {
+  margin: 1rem 0 0;
+}
+
+video {
+  position: absolute;
+  width: 100%;
+}
+img {
+  z-index: 1;
+
+  width: 100%;
+}
+.text {
+  margin-bottom: 0.5rem;
+}
+.screen {
+  line-height: 1;
+  position: relative;
+  flex-basis: 50%;
+}
+</style>
