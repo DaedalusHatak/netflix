@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import GetStartedForm from './GetStartedForm.vue';
 
 const isActive = ref<boolean>()
 const emailData = ref<string>('')
@@ -29,45 +30,7 @@ const emailData = ref<string>('')
           <h1>Unlimited movies, TV shows, and more</h1>
       
           <p class="subtitle-hero">Watch anywhere. Cancel anytime.</p>
-          <div class="get-started">
-            <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
-            <form action="">
-              <div class="input">
-                <label :class="isActive ? 'label-active' : 'label'" for="emailfield"
-                  >Email address</label
-                >
-                <input
-                  v-model="emailData"
-                  @focusout="emailData === '' ? (isActive = false) : (isActive = true)"
-                  @focusin="isActive = true"
-                  type="text"
-                  autocomplete="email"
-                  id="emailfield"
-                  minlength="5"
-                  maxlength="50"
-                />
-              </div>
-              <button class="get-started-button">
-                Get Started
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="Hawkins-Icon Hawkins-Icon-Standard"
-                  data-name="ChevronRight"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M7.29297 19.2928L14.5859 12L7.29297 4.70706L8.70718 3.29285L16.7072 11.2928C16.8947 11.4804 17.0001 11.7347 17.0001 12C17.0001 12.2652 16.8947 12.5195 16.7072 12.7071L8.70718 20.7071L7.29297 19.2928Z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </button>
-            </form>
-          </div>
+         <get-started-form></get-started-form>
         </div>
       </div>
     </div>
@@ -188,9 +151,7 @@ nav {
 .subtitle-hero {
   margin: 1rem 0 0;
 }
-.get-started {
-  margin: 1.5rem 0 0;
-}
+
 
 .logo {
   width: 9.25rem;
@@ -200,69 +161,7 @@ nav {
   display: block;
 }
 
-.input {
-  display: flex;
-  flex: 1 1 auto;
-  border: 1px solid;
-  border-radius: 0.25rem;
-  background: rgba(22, 22, 22, 0.7);
-  border-color: rgba(128, 128, 128, 0.7);
-  font-size: 1rem;
-  font-weight: 400;
-  min-width: 12.5rem;
 
-  height: 3.5rem;
-  padding: 0px;
-
-  color: rgb(255, 255, 255);
-}
-input {
-  color: white;
-  padding: 1.5rem 1rem 0.5rem;
-  border: none;
-  min-height: 16px;
-  min-width: 16px;
-  width: 100%;
-  background-clip: padding-box;
-  appearance: none;
-  background: transparent;
-}
-
-.label {
-  position: absolute;
-  z-index: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition-property: top, font-size, line-height;
-  transition-duration: 250ms;
-  pointer-events: none;
-  font-size: 1rem;
-  transition-timing-function: cubic-bezier(0.9, 0, 0.51, 1);
-  color: rgba(255, 255, 255, 0.7);
-  left: 1rem;
-  line-height: 1.5rem;
-  right: 1rem;
-  top: 1rem;
-}
-
-.label-active {
-  position: absolute;
-  z-index: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition-property: top, font-size, line-height;
-  transition-duration: 250ms;
-  pointer-events: none;
-  font-size: 0.75rem;
-  transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
-  color: rgba(255, 255, 255, 0.7);
-  left: 1rem;
-  line-height: 1.125rem;
-  right: 1rem;
-  top: 0.5rem;
-}
 
 .sign-in-button {
   z-index: 1000;
@@ -284,30 +183,5 @@ input {
   background: rgb(229, 9, 20);
   color: rgb(255, 255, 255);
 }
-.get-started-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  writing-mode: horizontal-tb !important;
-  width: max-content;
-  border: 0px;
-  margin-left: 0.5rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  min-height: 3.5rem;
-  padding: 0.75rem 1.5rem;
-  background: rgb(229, 9, 20);
-  color: rgb(255, 255, 255);
-  border-radius: 0.25rem;
-}
-form {
-  max-width: 36.625rem;
-  align-items: flex-start;
-  text-align: left;
-  margin: 1rem auto 0;
-  vertical-align: text-top;
-  display: flex;
-  width: 100%;
-  max-width: 36.625rem;
-}
+
 </style>

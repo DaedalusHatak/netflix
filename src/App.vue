@@ -3,6 +3,7 @@ import { computed, ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import HeroNetflix from './components/HeroNetflix.vue'
 import EnjoyTV from './components/EnjoyTV.vue'
+import AskedQuestions from './components/AskedQuestions.vue'
 
 const movies = ref<any>()
 
@@ -40,7 +41,7 @@ getMovies()
       <EnjoyTV class="content-section"></EnjoyTV>
   </section>
   <section>
-      <EnjoyTV class="content-section"></EnjoyTV>
+      <asked-questions class="content-section"></asked-questions>
   </section>
   <div v-if="movies"><div class="movies"  v-for="movie in movies.movies.results" :key="movie">{{ movie.original_title}}</div></div>
 </main>
@@ -80,16 +81,19 @@ z-index: 10;
 @media screen and (min-width: 600px) {
   .content-section {
     max-width: calc(100% - 4rem);
+    margin:auto;
   }
 }
 @media screen and (min-width: 1280px) {
   .content-section {
     max-width: calc(83.33333333333334% - 6rem);
+    margin:auto;
   }
 }
 @media screen and (min-width: 1920px) {
   .content-section {
     max-width: calc(66.66666666666666% - 6rem);
+    margin:auto;
   }
 }
 </style>
