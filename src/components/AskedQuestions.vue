@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import GetStartedForm from './GetStartedForm.vue'
-const note = "Note that this is not official netflix page!";
+const note = 'Note that this is not official netflix page!'
 interface Question {
   name: string
   answer: string
@@ -58,36 +58,31 @@ You can also download your favorite shows with the iOS, Android, or Windows 10 a
     <ul>
       <li v-for="question in arrOfQuestions" :key="question.name">
         <h3>
-          <button @click="question.isActive = !question.isActive">
+          <button
+            :style="question.isActive ? 'border-radius: 1rem 1rem 0 0' : 'border-radius:1rem'"
+            @click="question.isActive = !question.isActive"
+          >
             {{ question.name }}
+
             <p class="add-sign">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="default-ltr-cache-1tgeghn e164gv2o4"
-                data-name="Add"
-                alt=""
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M11 2V11H2V13H11V22H13V13H22V11H13V2H11Z"
-                  fill="currentColor"
-                ></path>
-              </svg>
+              <svg fill=currentColor height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 330 330" xml:space="preserve">
+<path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
+	c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393
+	s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z"/>
+</svg>
             </p>
           </button>
         </h3>
-        <div v-if="question.isActive" class="answer">
-          <p>
-            {{ question.answer }}
-            <br><br>
-           <b>This is not official netflix page!</b>
-          </p>
-        </div>
+        <Transition>
+         
+            <p  v-if="question.isActive" class="answer" :class="{'expand':question.isActive}">
+              {{ question.answer }}
+              <br /><br />
+              <b>This is not official netflix page!</b>
+            </p>
+ 
+        </Transition>
       </li>
     </ul>
     <get-started-form class="spacing"></get-started-form>
@@ -112,7 +107,7 @@ svg {
   margin-top: 2.85rem;
 }
 .ask-section {
-  padding: 6rem 0;
+  padding: 6rem 12rem;
   ul {
     padding: 0;
     margin: 1.5rem 0 0;
@@ -124,24 +119,26 @@ svg {
 }
 
 button {
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-align: left;
   cursor: pointer;
   color: white;
-  background-color: rgba(45, 45, 45, 1);
-  border: none;
+  background-color: rgba(1,1,1, 1);
+  border: 2px orangered groove;
   font-size: 1.5rem;
+  border-radius: 1rem 1rem 0 0;
   width: 100%;
   max-height: 75rem;
   padding: 1.5rem;
-  transition-duration: 250ms;
-  transition-property: background-color;
+  transition-duration: 0.6s;
+  transition-property: background-color,border-radius;
 }
 button:hover {
   transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
-  background-color: rgba(78, 78, 78, 1);
+  background-color: rgb(40, 40, 40);
 }
 .add-sign {
   height: 36px;
@@ -149,11 +146,35 @@ button:hover {
 .answer {
   font-size: 1.5rem;
   font-weight: 500;
-
+  border-radius: 0 0 1rem 1rem;
+  max-height: 0;
   white-space: pre-line;
   letter-spacing: normal;
   padding: 1.5rem;
-  background-color: rgb(45, 45, 45);
+  background-color: rgb(1,1,1);
+  overflow: hidden;
 }
+.expand{
+  max-height:100%;
+}
+.v-enter-active {
+  overflow: hidden;
+  animation: hei 0.25s;
+}
+.v-leave-active {
+  overflow: hidden;
+  animation: hei 0.25s reverse;
+} 
 
+@keyframes hei {
+  0% {
+    transform-origin: top;
+  transform: scaleY(0);
+  }
+
+  100% {
+    transform-origin: top;
+    transform: scaleY(1);
+  }
+}
 </style>

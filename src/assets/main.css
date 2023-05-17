@@ -1,12 +1,12 @@
 @import './base.css';
 
 *{
-  font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+  font-family: sans-serif;
 
-  line-height: 1.25em;
+  line-height: 1.12em;
 }
 #app {
-  background-color: black;
+  background-color: rgb(15, 11, 15);
   color:white;
   margin: 0 auto;
  

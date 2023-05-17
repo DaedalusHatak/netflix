@@ -127,18 +127,19 @@ main {
 }
 section {
   position: relative;
+  padding: 0 1.5rem;
 }
 section::after {
   content: '';
 
-  width: 100%;
+  width: 200%;
   height: 0.5rem;
   bottom: -0.5rem;
   background-color: rgb(35, 35, 35);
   z-index: 10;
   position: absolute;
   display: flex;
-
+left:-1.5rem;
   justify-content: center;
   color: rgb(255, 255, 255);
   text-align: center;
@@ -153,6 +154,9 @@ section::after {
   .content-section {
     max-width: calc(83.33333333333334% - 6rem);
     margin: auto;
+  }
+  section{
+    padding: 0 3rem;
   }
 }
 @media screen and (min-width: 1920px) {

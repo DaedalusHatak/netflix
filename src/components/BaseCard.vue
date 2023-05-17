@@ -25,12 +25,11 @@ reverse:Boolean
   margin: auto;
   flex-wrap: nowrap;
   padding: 4.5rem 0;
-  display: flex;
-  flex-direction: row;
+
   align-items: center;
 }
 h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 900;
 }
 p {
@@ -53,5 +52,20 @@ img {
   line-height: 1;
   position: relative;
   flex-basis: 50%;
+}
+@media (min-width: 600px) {
+  .tv{
+    display: flex;
+  flex-direction: row;
+  }
+p {
+  font-size: 1rem;
+}
+}
+
+@media (min-width: 960px) {
+  h2{
+    font-size: 3rem;
+  }
 }
 </style>

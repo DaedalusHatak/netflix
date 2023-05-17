@@ -63,7 +63,7 @@ const emailData = ref<string>('')
   display: flex;
   flex: 1 1 100%;
   border: 1px solid;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
   background: rgba(22, 22, 22, 0.7);
   border-color: rgba(128, 128, 128, 0.7);
   font-size: 1rem;
@@ -80,6 +80,7 @@ input {
   color: white;
   padding: 1.5rem 1rem 0.5rem;
   border: none;
+  border-radius: 1rem;
   min-height: 16px;
   min-width: 16px;
   width: 100%;
@@ -129,7 +130,7 @@ input {
   justify-content: center;
   writing-mode: horizontal-tb !important;
   width: max-content;
-  
+  margin-top:1rem;
   flex: 0 0 auto;
   border: 0px;
   margin-left: 0.5rem;
@@ -137,9 +138,10 @@ input {
   font-weight: 500;
   min-height: 3.5rem;
   padding: 0.75rem 1.5rem;
-  background: rgb(229, 9, 20);
+  background: rgb(51, 26, 187,0.9);
+  cursor: pointer;
   color: rgb(255, 255, 255);
-  border-radius: 0.25rem;
+  border-radius: 1rem;
 }
 form {
   max-width: 36.625rem;
@@ -156,6 +158,10 @@ width: 100%;
     form{
         align-items: flex-start;
         flex-direction: row;
+        
+    }
+    .get-started-button{
+      margin-top:0;
     }
 }
 </style>
