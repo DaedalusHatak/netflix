@@ -133,9 +133,10 @@ section::after {
   content: '';
 
   width: 200%;
-  height: 0.5rem;
-  bottom: -0.5rem;
-  background-color: rgb(35, 35, 35);
+  height: 0.2rem;
+  bottom: -0.2rem;
+  background-color: rgb(51, 26, 187, 0.8);
+
   z-index: 10;
   position: absolute;
   display: flex;
