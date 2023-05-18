@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue';
 import BaseInput from './BaseInput.vue';
 
 defineProps({
@@ -14,7 +13,7 @@ defineProps({
             <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
             <form :style="isMax ? `max-width:${isMax}` : ''" action="">
               <div class="input">
-                <BaseInput type="email" name="Email Address" 
+                <BaseInput type="email" name="Email Address"  :background="false"
              />
 
               </div>
