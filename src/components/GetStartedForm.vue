@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import BaseInput from './BaseInput.vue';
+
 defineProps({
     isMax: String,
 });
-const isActive = ref<boolean>()
-const emailData = ref<string>('')
+
 </script>
 
 <template>
@@ -13,19 +14,9 @@ const emailData = ref<string>('')
             <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
             <form :style="isMax ? `max-width:${isMax}` : ''" action="">
               <div class="input">
-                <label :class="isActive ? 'label-active' : 'label'" for="emailfield"
-                  >Email address</label
-                >
-                <input
-                  v-model="emailData"
-                  @focusout="emailData === '' ? (isActive = false) : (isActive = true)"
-                  @focusin="isActive = true"
-                  type="text"
-                  autocomplete="email"
-                  id="emailfield"
-                  minlength="5"
-                  maxlength="50"
-                />
+                <BaseInput type="email" name="Email Address" 
+             />
+
               </div>
               <button class="get-started-button">
                 Get Started
@@ -76,54 +67,7 @@ width: 100%;
 
   color: rgb(255, 255, 255);
 }
-input {
-  color: white;
-  padding: 1.5rem 1rem 0.5rem;
-  border: none;
-  border-radius: 1rem;
-  min-height: 16px;
-  min-width: 16px;
-  width: 100%;
-  background-clip: padding-box;
-  appearance: none;
-  background: transparent;
-}
 
-.label {
-  position: absolute;
-  z-index: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition-property: top, font-size, line-height;
-  transition-duration: 250ms;
-  pointer-events: none;
-  font-size: 1rem;
-  transition-timing-function: cubic-bezier(0.9, 0, 0.51, 1);
-  color: rgba(255, 255, 255, 0.7);
-  left: 1rem;
-  line-height: 1.5rem;
-  right: 1rem;
-  top: 1rem;
-}
-
-.label-active {
-  position: absolute;
-  z-index: 1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition-property: top, font-size, line-height;
-  transition-duration: 250ms;
-  pointer-events: none;
-  font-size: 0.75rem;
-  transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
-  color: rgba(255, 255, 255, 0.7);
-  left: 1rem;
-  line-height: 1.125rem;
-  right: 1rem;
-  top: 0.5rem;
-}
 .get-started-button {
   display: inline-flex;
   align-items: center;
