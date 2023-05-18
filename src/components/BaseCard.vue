@@ -7,10 +7,10 @@ reverse:Boolean
 </script>
 
 <template>
-  <div class="tv" :style="reverse ? ' flex-direction: row-reverse' : ''">
+  <div class="tv" :style="props.reverse ? ' flex-direction: row-reverse' : ''">
     <div class="screen text">
-      <h2>{{header}}</h2>
-      <p>{{desc}}</p>
+      <h2>{{props.header}}</h2>
+      <p>{{props.desc}}</p>
     </div>
     <div class="screen">
       <slot></slot>

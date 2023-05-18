@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import GetStartedForm from './GetStartedForm.vue';
+import GetStartedForm from '@/components/GetStartedForm.vue';
+import { RouterLink } from 'vue-router';
+
 </script>
 
 <template>
@@ -14,7 +16,7 @@ import GetStartedForm from './GetStartedForm.vue';
         <span class="logo-span"
           ><img src="@/assets/daedalus.png" alt="">
         </span>
-        <button class="sign-in-button">Sign In</button>
+        <RouterLink to="/login"  class="sign-in-button">Sign In</RouterLink>
       </nav>
       <div class="flex-hero">
         <div class="info">  <h1>THIS IS NOT NETFLIX PAGE</h1>
@@ -122,6 +124,11 @@ nav {
   flex-direction: column;
   padding: 9.875rem 0 4rem;
   min-height: 43.75rem;
+}
+a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 .shadow-hero-image {
   background: rgb(0 0 0 / 40%);

@@ -2,7 +2,7 @@
     <img src="@/assets/tv.png" alt="" />
       <div class="video-screen">
         <video
-          data-uia="nmhp-card-animation-asset-video"
+          data-uia="video"
           autoplay="true"
           playsinline="true"
           muted="true"
