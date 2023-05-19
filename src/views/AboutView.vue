@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import BaseInput from '@/components/BaseInput.vue';
+
+
 </script>
 
 <template>
@@ -13,7 +15,7 @@ import BaseInput from '@/components/BaseInput.vue';
 
       <div class="form-hero">
         <h1>Sign In</h1>
-        <form action="">
+        <form name="login">
          <div>
           <BaseInput name="Email or phone number" type="email" :background="true"/>
          </div>
@@ -96,6 +98,7 @@ padding: 4rem 1rem;
 form{
   display: flex;
   gap: 20px;
+
   flex-direction: column;
   justify-content: center;
   text-align: left;
